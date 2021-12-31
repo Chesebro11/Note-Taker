@@ -1,4 +1,4 @@
-const { Router } = require('express');
+const router = require('express').Router();
 
 //Dependencies
 const fs = require("fs");
@@ -10,11 +10,11 @@ const { notes } = require('../../db/db.json');
 //import functions
 const { newNote, validateNote, getId } = require('../../lib/notes');
 
-Router.get('/notes', (req, res) => {
+router.get('/notes', (req, res) => {
     res.json(notes);
 })
 
-Router.post('/notes', (req, res) => {
+router.post('/notes', (req, res) => {
     req.body.id = notes.length.toString();
 
     if(!validateNote(req.body)) {
@@ -25,6 +25,8 @@ Router.post('/notes', (req, res) => {
     }
 });
 
-Router.delete('/notes/:id', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
 
 })
+
+module.exports = router;
