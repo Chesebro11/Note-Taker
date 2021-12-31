@@ -4,6 +4,9 @@ const { Router } = require('express');
 const fs = require("fs");
 const path = require('path');
 
+//import notes array
+const { notes } = require('../../db/db.json')
+
 //import functions
 const { newNote, validateNote, getId } = require('../../lib/notes');
 
