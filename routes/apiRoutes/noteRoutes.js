@@ -26,7 +26,19 @@ router.post('/notes', (req, res) => {
 });
 
 router.delete('/notes/:id', (req, res) => {
-
+    const destroy = getId(req.params.id, notes)
+    const index = notes.indexOf(destroy);
+    if (index > 1) {
+        notes.splice(index, 1)
+        fs.writeFile(
+            path.resolve(__dirname, "../../db/db.json"),
+            JSON.stringify({ notes }, null),
+            (error) => {
+                if (error) console.log(error);
+                res.json(notes);
+            }
+        )
+    }
 })
 
 module.exports = router;

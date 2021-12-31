@@ -1,9 +1,14 @@
 {
-    "notes": [
-        {
-            "title": "First",
-            "text": "HELLO",
-            "id": 0
-        }
-    ]
+  "notes": [
+    {
+      "title": "First",
+      "text": "HELLO",
+      "id": 0
+    },
+    {
+      "title": "Creating Note From Site",
+      "text": "Is this going to work?",
+      "id": "1"
+    }
+  ]
 }
